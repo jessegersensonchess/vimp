@@ -30,7 +30,7 @@ TMPFILE="/tmp/${FILENAME}"
 function checksum(){
 	INPUT="$1"
 	#### get checksum of original file ####
-	sha256 -p "$INPUT" | awk '{print $4}'
+	sha256sum "$INPUT" | awk '{print $1}'
 }
 
 function doesFileExist(){
@@ -99,4 +99,3 @@ doesFileExist
 makeTemporaryFile
 editAndValidateFile
 exit
-
